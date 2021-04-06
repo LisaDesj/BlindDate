@@ -16,4 +16,6 @@ Ethnicity: if more than one race choose 'mixed'
 wSex (wants Sex): 'M', 'F', or 'B' (both)
 wKids (wants future kids): 'yes', 'no', 'maybe'
 
+BrettC's code for read_profile:
+https://stackoverflow.com/questions/37379782/how-to-generate-rules-from-csv-files-in-prolog
 (also concerned about how read_profile will manage a larger database).
