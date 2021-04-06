@@ -2,6 +2,7 @@
 
 For Tiger from Lisa:
 
+- Save an extra copy of trialDB.csv because I wrote the "write" function in read_profile and it will add a new profile to the database.
 - trialDB.csv is a sample database and feel free to add or change it (but it must be formated the way it is) (Also best if the answers have only a few choices)
 - we will need more wants added but it was a lot of work for me to write this already.
 
