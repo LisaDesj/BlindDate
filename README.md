@@ -7,21 +7,21 @@ To Tiger from Lisa:
 - trialDB.csv is a sample database and feel free to add or change it (but it must be formated the way it is) (Also best if the answers have only a few choices)
 - we will need more wants added but it was a lot of work for me to write this already, please add if you can.
 
-Columns: name,age,sex,orientation,bodytype,education,height,offspring,wAge,wSex,wKids
+Columns: name,age,sex,orientation,bodytype,education,ethnicity,height,location,offspring,wAge,wSex,wKids
 
+Age: don't put brackets around integer.
 Sex: 'M', 'F', 'TM', 'TF',
 Orientation: 'straight', 'gay', 'bisexual',
 Body type: 'thin', 'average', 'athletic', 'a little extra',
 Education: 'high school', 'some college', 'college',
-Ethnicity: 'caucasian', 'mixed','asian','black'....etc.,
+Ethnicity: if more than one race choose 'mixed',
 Height: in inches,
 Location: 'Vancouver', 'Burnaby', 'Richmond', 'Surrey'
 Offspring: 'has kid(s)', 'no kids',
-Ethnicity: if more than one race choose 'mixed',
-wSex (wants Sex): 'M', 'F', or 'B' (both) (forgot to add options for 'TM' and 'TF'),
+wSex (wants Gender): 'M', 'F', or 'B' (both) (forgot to add options for 'TM' and 'TF'),
 wKids (wants future kids): 'yes', 'no', 'maybe',
 
 BrettC's code for read_profile:
 https://stackoverflow.com/questions/37379782/how-to-generate-rules-from-csv-files-in-prolog
 (also concerned about how his code (at bottom of read_profile) will manage a larger database).
-(Could just put in rows, I guess)
+(Could just put in rows, I guess,but thought his way would be easier)
