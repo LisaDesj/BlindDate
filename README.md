@@ -9,7 +9,7 @@ To Tiger from Lisa:
 
 Columns: name,age,sex,orientation,bodytype,education,ethnicity,height,location,offspring,wAge,wSex,wKids
 
-Age: don't put brackets around integer.
+Age: don't put ' ' around integer.
 Sex: 'M', 'F', 'TM', 'TF',
 Orientation: 'straight', 'gay', 'bisexual',
 Body type: 'thin', 'average', 'athletic', 'a little extra',
