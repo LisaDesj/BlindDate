@@ -1,4 +1,48 @@
-% Author BretC 
+% start takes in User Input to create a Blind Date profile and possibly look for matches
+% type period and enter after the answer (when the user writes)
+% user needs to write words encased in ' '.
+
+start :-
+     write("Welcome to Blind Date."), nl,
+     write("Create a profile by first writing your name. Example 'Lisa'. "),
+     read(N),
+     write("How old are you? Example 25. "),
+     read(A),
+     write("What is your orientation: 'straight', 'gay', or 'bisexual'. "),
+     read(Ori),
+     write("Describe your body type: 'thin', 'average', 'athletic', 'a little extra'. "),
+     read(BT), 
+     write("Type your level of education: 'high school', 'some college', 'college'. "),
+     read(Edu),
+     write("What is your height in inches? Example 70. "),
+     read(H), % may need to change has kids to a yes or no in the csv
+     write("Do you have kids? 'has kid(s)' or 'no kids'. "),
+     read(K), % not sure how we will handle age range
+     write("What age range are you looking for? Example '18-25'. "),
+     read(WAge),
+     write("Are you looking for a man (type 'M') a woman (type 'F') or both (type 'B'). "),
+     read(WSex),
+     write("Lastly do you want any future kids? 'yes', 'no' or 'maybe'. "),
+     read(WKids),
+     createProfile(N,A,Ori,BT,Edu,H,K,WAge,WSex,WKids),
+     write("Are you ready to look for matches? 'Y' or 'N'. "),
+     read(Answer),
+     (Answer=='Y' -> getMatches(N,A,Ori,BT,Edu,H,K,WAge,WSex,WKids) ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
+
+% write profile to csv
+createProfile(N,A,Ori,BT,Edu,H,K,WAge,WSex,WKids) :-
+     write('Works').
+    % csv_write_file('tryWrite2.csv',N).
+
+% getMatches takes in a profile and outputs a list of matches
+getMatches(N,A,Ori,BT,Edu,H,K,WAge,WSex,WKids) :-
+     write('GetMatches works!').
+
+% lookingFor parses the database for a specific attribute and returns the names of people who have that attribute
+
+
+% Code Below makes FACTS from data in trialDB.csv
+% Code Below: Author BretC 
 % https://stackoverflow.com/questions/37379782/how-to-generate-rules-from-csv-files-in-prolog
 
 % Exmaple clause to read a file and print out facts to the console.
