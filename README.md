@@ -19,5 +19,5 @@ wKids (wants future kids): 'yes', 'no', 'maybe'
 
 BrettC's code for read_profile:
 https://stackoverflow.com/questions/37379782/how-to-generate-rules-from-csv-files-in-prolog
-(also concerned about how read_profile will manage a larger database).
+(also concerned about how his code (at bottom of read_profile) will manage a larger database).
 (Could just put in rows, I guess)
