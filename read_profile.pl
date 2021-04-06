@@ -36,15 +36,17 @@ start :-
      read(Answer),
      (Answer=='Y' -> getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
 
+
 % write profile to csv
 createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
-     write('createProfile works!').
-     % code below will delete all the data
-     % csv_write_file('tryWrite2.csv',[row(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)]).
+     csv_read_file('trialDB.csv', Data),
+     append(Data, [row(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)],X),
+     csv_write_file('trialDB.csv',X).
+
 
 % getMatches takes in a profile and outputs a list of matches
 getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
-     write('GetMatches works!').
+     write('Work In Progress!').
 
 % lookingFor parses the database for a specific attribute and returns the names of people who have that attribute
 
@@ -57,7 +59,7 @@ getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
 % Instead of printing, you could do whatever you like with them (assert them into WM for example)
 example :-
     build_facts_from_file('trialDB.csv', FACTS),
-    writeln(FACTS).
+    writeln(FACTS). % can comment this line out later
 
 % build_facts_from_file(FILENAME_IN, FACTS_OUT).
 % Reads the file and outputs a list of facts.
