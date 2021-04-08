@@ -1,53 +1,30 @@
+:- [take_input].
+
 % start takes in User Input to create a Blind Date profile and possibly look for matches
 % type period and enter after the answer (when the user writes)
 % user needs to write words encased in ' '.
 
-start :-
-     write("Welcome to Blind Date."), nl,
-     write("Create a profile by first writing your name. Example 'Lisa'. "),
-     nl,
-     read(N),
-     write("How old are you? Example 25. "),
-     nl,
-     read(A),
-     write("Type your gender: 'M', 'F', 'TM', 'TF'. "),
-     nl,
-     read(Sex),
-     write("What is your orientation: 'straight', 'gay', or 'bisexual'. "),
-     nl,
-     read(Ori),
-     write("Describe your body type: 'thin', 'average', 'athletic', 'a little extra'. "),
-     nl,
-     read(BT), 
-     write("Type your level of education: 'high school', 'some college', 'college'. "),
-     nl,
-     read(Edu),
-     write("What is your ethnicity? Example 'caucasian', 'mixed'..."),
-     nl,
-     read(Eth),
-     write("What is your height in inches? Example 70. "),
-     nl,
-     read(H), 
-     write("Where are you located? Example 'Vancouver'. "),
-     nl,
-     read(L),
-     % may need to change has kids to a yes or no in the csv
-     write("Do you have kids? 'has kid(s)' or 'no kids'. "),
-     nl,
-     read(K), % not sure how we will handle age range
-     write("What age range are you looking for? Example '18-25'. "),
-     nl,
-     read(WAge),
-     write("Are you looking for a man (type 'M') a woman (type 'F') or both (type 'B'). "),
-     nl,
-     read(WSex),
-     write("Lastly do you want any future kids? 'yes', 'no' or 'maybe'. "),
-     nl,
-     read(WKids),
-     write("Are you ready to look for matches? 'Y' or 'N'. "),
-     nl,
-     read(Answer),
-     (Answer=='Y' -> 
+start :- 
+    write("Welcome to Blind Date."), nl,
+    take_name(N),
+    take_age(A),
+    take_sex(Sex),
+    take_Ori(Ori),
+    take_BT(BT),
+    take_Edu(Edu),
+    take_Eth(Eth),
+    take_height(H),
+    take_loc(L),
+    % may need to change has kids to a yes or no in the csv
+    take_kids(K),
+    % not sure how we will handle age range
+    take_WAge(WAge),
+    take_WSex(WSex),
+    take_WKids(WKids),
+    write("Are you ready to look for matches? 'Y' or 'N'. "),
+    nl,
+    read(Answer),
+    (Answer=='Y' -> 
         getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
         createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
         ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
@@ -55,9 +32,9 @@ start :-
 
 % write profile to csv
 createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
-     csv_read_file('trialDB.csv', Data),
-     append(Data, [row(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)],X),
-     csv_write_file('trialDB.csv',X).
+    csv_read_file('trialDB.csv', Data),
+    append(Data, [row(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)],X),
+    csv_write_file('trialDB.csv',X).
 
 
 % getMatches takes in a profile and outputs a list of matches
