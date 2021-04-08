@@ -45,9 +45,16 @@ createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
 % getMatches takes in a profile and outputs a list of matches
 getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     csv_read_file("trialDB.csv", [_|Data]),
-    preprocess(PData, Data),
+    % preprocess(PData, Data),
     take_pref(Pref),
-    nth0(0, PData, X),
+    split_string(WAge, "-", "", WL),
+    nth0(0, WL, F),
+    nth0(1, WL, S),
+    atom_number(F, FS),
+    atom_number(S, SS),
+    % SP_Data : scored by preference data
+    score_by_pref(Data, Pref, SP_Data, (FS, SS), Loc, WSex, WKids),
+    nth0(0, SP_Data, X),
     write(X).
 
 % lookingFor parses the database for a specific attribute and 

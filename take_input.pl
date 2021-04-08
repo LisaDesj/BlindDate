@@ -58,7 +58,18 @@ take_kids(K) :-
 take_WAge(WAge) :-
   write("What age range are you looking for? Example \"18-25\". "),
   nl,
-  read(WAge).
+  read(W2),
+  (split(W2, "-", "", L, WL),
+   nth0(0, W, F),
+   nth0(1, W, S),
+   atom_number(F, FS),
+   atom_number(S, SS)
+   ->
+    Wage = W2
+    ;
+    write("Invalid input, try again"),
+    nl,
+    take_WAge(WAge)).
 
 take_WSex(WSex) :-
   check_valid(WSex,
@@ -85,7 +96,8 @@ take_pref(Pref) :-
         Example #2: [\"Loc\", \"Age\", \"Sex\", \"Kids\"]"),
   nl,
   read(P2),
-  (permutation(P2, [Sex, Kids, Loc, Age]) ->
+  (is_list(P2),
+  permutation(P2, [Sex, Kids, Loc, Age]) ->
     Pref = P2
     ;
     write("Input invalid, try again."),
