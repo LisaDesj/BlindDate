@@ -1,5 +1,6 @@
 :- [take_input].
 :- [write_profile].
+:- [data_manipulation].
 
 % start takes in User Input to create a Blind Date profile and possibly look for matches
 % type period and enter after the answer (when the user writes)
@@ -44,7 +45,11 @@ createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
 % getMatches takes in a profile and outputs a list of matches
 getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     csv_read_file("trialDB.csv", [_|Data]),
+    preprocess(PData, Data),
     take_pref(Pref),
-    write(Pref).
+    nth0(0, PData, X),
+    write(X).
 
-% lookingFor parses the database for a specific attribute and returns the names of people who have that attribute
+% lookingFor parses the database for a specific attribute and 
+% returns the names of people who have that attribute
+
