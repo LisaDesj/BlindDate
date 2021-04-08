@@ -9,17 +9,17 @@ To Tiger from Lisa:
 
 Columns: name,age,sex,orientation,bodytype,education,ethnicity,height,location,offspring,wAge,wSex,wKids
 
-Age: don't put ' ' around integer.
-Sex: 'M', 'F', 'TM', 'TF',
-Orientation: 'straight', 'gay', 'bisexual',
-Body type: 'thin', 'average', 'athletic', 'a little extra',
-Education: 'high school', 'some college', 'college',
-Ethnicity: if more than one race choose 'mixed',
-Height: in inches,
-Location: 'Vancouver', 'Burnaby', 'Richmond', 'Surrey'
-Offspring: 'has kid(s)', 'no kids',
-wSex (wants Gender): 'M', 'F', or 'B' (both) (forgot to add options for 'TM' and 'TF'),
-wKids (wants future kids): 'yes', 'no', 'maybe',
+Age: don't put ' ' around integer. \
+Sex: 'M', 'F', 'TM', 'TF', \
+Orientation: 'straight', 'gay', 'bisexual', \
+Body type: 'thin', 'average', 'athletic', 'a little extra', \
+Education: 'high school', 'some college', 'college', \
+Ethnicity: if more than one race choose 'mixed', \
+Height: in inches, \
+Location: 'Vancouver', 'Burnaby', 'Richmond', 'Surrey' \
+Offspring: 'has kid(s)', 'no kids', \
+wSex (wants Gender): 'M', 'F', or 'B' (both) (forgot to add options for 'TM' and 'TF'),\
+wKids (wants future kids): 'yes', 'no', 'maybe', \
 
 BrettC's code for read_profile:
 https://stackoverflow.com/questions/37379782/how-to-generate-rules-from-csv-files-in-prolog

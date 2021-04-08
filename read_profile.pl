@@ -44,11 +44,13 @@ start :-
      write("Lastly do you want any future kids? 'yes', 'no' or 'maybe'. "),
      nl,
      read(WKids),
-     createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
      write("Are you ready to look for matches? 'Y' or 'N'. "),
      nl,
      read(Answer),
-     (Answer=='Y' -> getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
+     (Answer=='Y' -> 
+        getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
+        createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
+        ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
 
 
 % write profile to csv
