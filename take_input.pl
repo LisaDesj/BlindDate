@@ -48,7 +48,7 @@ take_loc(L) :-
   read(L).
 
 take_kids(K) :-
-  write("Do you have kids? 'has kid(s)' or 'no kids'. "),
+  write("Do you have kids? 'yes' or 'no'. "),
   nl,
   read(K).
 

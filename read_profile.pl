@@ -15,7 +15,6 @@ start :-
     take_Eth(Eth),
     take_height(H),
     take_loc(L),
-    % may need to change has kids to a yes or no in the csv
     take_kids(K),
     % not sure how we will handle age range
     take_WAge(WAge),
