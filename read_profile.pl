@@ -21,10 +21,8 @@ start :-
     take_WAge(WAge),
     take_WSex(WSex),
     take_WKids(WKids),
-    write("Are you ready to look for matches? 'Y' or 'N'. "),
-    nl,
-    read(Answer),
-    (Answer=='Y' -> 
+    take_ready(Answer),
+    (Answer == "Y" -> 
         getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
         createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
         ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
