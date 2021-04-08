@@ -79,6 +79,20 @@ take_ready(Answer) :-
                Your profile will not be saved if you choose \"N\"",
               "Please choose an valid option").
 
+take_pref(Pref) :-
+  write("Input your preference of attributes (Sex, Kids, Loc, Age) in an ordered list.
+        Example #1: [\"Sex\", \"Kids\", \"Loc\", \"Age\"]
+        Example #2: [\"Loc\", \"Age\", \"Sex\", \"Kids\"]"),
+  nl,
+  read(P2),
+  (permutation(P2, [Sex, Kids, Loc, Age]) ->
+    Pref = P2
+    ;
+    write("Input invalid, try again."),
+    nl,
+    take_pref(Pref)).
+  
+
 check_valid(X, Lis, Mes, ErrM) :-
   write(Mes),
   nl,

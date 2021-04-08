@@ -6,26 +6,32 @@
 % user needs to write words encased in ' '.
 
 start :- 
-    write("Welcome to Blind Date."), nl,
-    take_name(N),
-    take_age(A),
-    take_sex(Sex),
-    take_Ori(Ori),
-    take_BT(BT),
-    take_Edu(Edu),
-    take_Eth(Eth),
-    take_height(H),
-    take_loc(L),
-    take_kids(K),
-    % not sure how we will handle age range
-    take_WAge(WAge),
-    take_WSex(WSex),
-    take_WKids(WKids),
+    % write("Welcome to Blind Date."), nl,
+    % take_name(N),
+    % take_age(A),
+    % take_sex(Sex),
+    % take_Ori(Ori),
+    % take_BT(BT),
+    % take_Edu(Edu),
+    % take_Eth(Eth),
+    % take_height(H),
+    % take_loc(L),
+    % take_kids(K),
+    % % not sure how we will handle age range
+    % take_WAge(WAge),
+    % take_WSex(WSex),
+    % take_WKids(WKids),
     take_ready(Answer),
     (Answer == "Y" -> 
-        getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
-        createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
-        ; write('Thanks for creating your profile. Restart Blind Date to look for matches!')).
+        % getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
+        % createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
+        % -----
+        % the following line is used only for implementation and debugging
+        getMatches("Bob", 22, "M", "straight","average","some college","asian", 67,
+                    "Vancouver","no","20-40","F","maybe")
+        % createProfile("Bob", 22, "M", "straight","average","some college","asian", 67,
+        %             "Vancouver","no","20-40","F","maybe")
+        ; write("Thanks for creating your profile. Restart Blind Date to look for matches!")).
 
 
 % write profile to csv
@@ -37,6 +43,8 @@ createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
 
 % getMatches takes in a profile and outputs a list of matches
 getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
-     write('Work In Progress!').
+    csv_read_file("trialDB.csv", [_|Data]),
+    take_pref(Pref),
+    write(Pref).
 
 % lookingFor parses the database for a specific attribute and returns the names of people who have that attribute
