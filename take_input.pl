@@ -65,7 +65,7 @@ take_WAge(WAge) :-
    atom_number(F, FS),
    atom_number(S, SS)
    ->
-    Wage = W2
+    WAge = W2
     ;
     write("Invalid input, try again"),
     nl,
@@ -97,7 +97,7 @@ take_pref(Pref) :-
   nl,
   read(P2),
   (is_list(P2),
-  permutation(P2, [Sex, Kids, Loc, Age]) ->
+  permutation(P2, ["Sex", "Kids", "Loc", "Age"]) ->
     Pref = P2
     ;
     write("Input invalid, try again."),
