@@ -54,7 +54,7 @@ getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     sort(0, @>=, SA_Data, Sorted_Data),
     show_result(X, Sorted_Data).
     %------------------------
-    % Used for rating system debugging
+    % % Used for rating system debugging
     % print_data(Sorted_Data).
     %------------------------
     
