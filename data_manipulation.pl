@@ -67,9 +67,6 @@ get_from_wage(WAge, FS, SS) :-
   atom_number(F, FS),
   atom_number(S, SS).
 
-% Sort data based on score
-% sort_data((H, )) 
-
 
 % debug tool
 % print data
@@ -80,8 +77,8 @@ print_data([H|T]) :-
   print_data(T).
 
 % Following are predicates used to access elements easily
-first((X, _), X).
-second((_, X), X).
+first(X-_, X).
+second(_-Y, Y).
 % name,age,sex,orientation,bodytype,education,ethnicity,height,location,offspring,wAge,wSex,wKids
 name(row(X,_,_,_,_,_,_,_,_,_,_,_,_), X).
 age(row(_,X,_,_,_,_,_,_,_,_,_,_,_), X).

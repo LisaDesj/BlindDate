@@ -7,31 +7,31 @@
 % user needs to write words encased in ' '.
 
 start :- 
-    % write("Welcome to Blind Date."), nl,
-    % take_name(N),
-    % take_age(A),
-    % take_sex(Sex),
-    % take_Ori(Ori),
-    % take_BT(BT),
-    % take_Edu(Edu),
-    % take_Eth(Eth),
-    % take_height(H),
-    % take_loc(L),
-    % take_kids(K),
-    % % not sure how we will handle age range
-    % take_WAge(WAge),
-    % take_WSex(WSex),
-    % take_WKids(WKids),
+    write("Welcome to Blind Date."), nl,
+    take_name(N),
+    take_age(A),
+    take_sex(Sex),
+    take_Ori(Ori),
+    take_BT(BT),
+    take_Edu(Edu),
+    take_Eth(Eth),
+    take_height(H),
+    take_loc(L),
+    take_kids(K),
+    take_WAge(WAge),
+    take_WSex(WSex),
+    take_WKids(WKids),
     take_ready(Answer),
     (Answer == "Y" -> 
-        % getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
-        % createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
-        % -----
+        getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
+        createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
+        % -----------------------
         % the following line is used only for implementation and debugging
-        getMatches("Bob", 22, "M", "straight","average","some college","asian", 67,
-                    "Vancouver","no","20-40","F","maybe")
+        % getMatches("Bob", 22, "M", "straight","average","some college","asian", 67,
+        %             "Vancouver","no","20-40","F","maybe")
         % createProfile("Bob", 22, "M", "straight","average","some college","asian", 67,
         %             "Vancouver","no","20-40","F","maybe")
+        %------------------------
         ; write("Thanks for creating your profile. Restart Blind Date to look for matches!")).
 
 
@@ -52,8 +52,46 @@ getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     % SA_Data : data score again
     score_again(SP_Data, SA_Data, A, K, Sex, WKids, WSex),
     sort(0, @>=, SA_Data, Sorted_Data),
-    print_data(Sorted_Data).
+    show_result(X, Sorted_Data).
+    %------------------------
+    % Used for rating system debugging
+    % print_data(Sorted_Data).
+    %------------------------
+    
 
 % lookingFor parses the database for a specific attribute and 
 % returns the names of people who have that attribute
 
+% to get index of match to view
+show_result(X, Sorted_Data) :-
+  write("
+        To view one of your top 10 matches, enter a integer in the range [1,10].
+        To exit, enter \"quit\"."),
+  nl,
+  read(Y),
+  (Y == "quit" ->
+    X = Y;
+    (integer(Y),
+    Y >= 1,
+    10 >= Y ->
+        Ind is Y - 1,
+        nth0(Ind, Sorted_Data, Profile),
+        first(Profile, Score),
+        second(Profile, Info),
+        % name(Info, Name),
+        % age(Info Age),
+        % sex(Info, Sex),
+        % bt(Info, BT),
+        % edu(Info, Edu),
+        % eth(Info, Eth),
+        % height(Info, H),
+        % loc(Info, Loc),
+        % kids(Info, Kids),
+        % write(Profile),
+        write("\n \n ------------------------------------- \n"),
+        write("Score "), write(Score),
+        nl,
+        write("Profile "), write(Info),
+        write("\n ------------------------------------- \n \n");
+    write("Invalid input, try again. \n")),
+    show_result(X, Sorted_Data)).

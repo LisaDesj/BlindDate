@@ -1,3 +1,4 @@
+:- [data_manipulation].
 % helper functions for read_profile to take inputs
 % checks if input is valid
 
@@ -59,11 +60,7 @@ take_WAge(WAge) :-
   write("What age range are you looking for? Example \"18-25\". "),
   nl,
   read(W2),
-  (split(W2, "-", "", L, WL),
-   nth0(0, W, F),
-   nth0(1, W, S),
-   atom_number(F, FS),
-   atom_number(S, SS)
+  (get_from_wage(W2, FS, SS)
    ->
     WAge = W2
     ;
@@ -109,7 +106,7 @@ check_valid(X, Lis, Mes, ErrM) :-
   write(Mes),
   nl,
   read(Y),
-  (member(Y, Lis) ->
+  (string(Y), member(Y, Lis) ->
     X = Y
     ;
     write(ErrM),
