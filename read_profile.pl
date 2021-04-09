@@ -50,9 +50,9 @@ getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     % SP_Data : scored by preference data
     score_by_pref(Data, Pref, SP_Data, (FS, SS), Loc, WSex, WKids),
     % SA_Data : data score again
-    score_again(SP_Data, SA_Data, A, K, Sex),
-    nth0(0, SA_Data, X),
-    write(X).
+    score_again(SP_Data, SA_Data, A, K, Sex, WKids, WSex),
+    sort(0, @>=, SA_Data, Sorted_Data),
+    print_data(Sorted_Data).
 
 % lookingFor parses the database for a specific attribute and 
 % returns the names of people who have that attribute
