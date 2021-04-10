@@ -15,8 +15,8 @@ take_age(A) :-
 
 take_sex(Sex) :-
   check_valid(Sex,
-              ["M", "F", "TM", "TF"],
-              "Type your gender: \"M\", \"F\", \"TM\", \"TF\". ",
+              ["m", "f", "tm", "tf"],
+              "Type your gender: \"m\", \"f\", \"tm\", \"tf\". ",
               "Sorry, your gender isn't supported by this program for now").
 
 take_Ori(Ori) :-
@@ -27,14 +27,14 @@ take_Ori(Ori) :-
 
 take_BT(BT) :-
   check_valid(BT,
-              ["thin", "average", "athletic", "a little extra"],
-              "Describe your body type: \"thin\", \"average\", \"athletic\", \"a little extra\". ",
+              ["thin", "average", "athletic", "'a little extra'"],
+              "Describe your body type: \"thin\", \"average\", \"athletic\", \"'a little extra'\". ",
               "Sorry your body type isn't supported by this program for now").
 
 take_Edu(Edu) :-
   check_valid(Edu,
-              ["high school", "some college", "college"],
-              "Type your level of education: \"high school\", \"some college\", \"college\". ",
+              ["'high school'", "'some college'", "college"],
+              "Type your level of education: \"'high school'\", \"'some college'\", \"college\". ",
               "Please choose an option that's closest to your situation").
 
 take_Eth(Eth) :-
@@ -70,8 +70,8 @@ take_WAge(WAge) :-
 
 take_WSex(WSex) :-
   check_valid(WSex,
-              ["M", "F", "B"],
-              "Are you looking for a man (type \"M\") a woman (type \"F\") or both (type \"B\"). ",
+              ["m", "f", "b"],
+              "Are you looking for a man (type \"m\") a woman (type \"f\") or both (type \"b\"). ",
               "Please choose a provided option").
 
 take_WKids(WKids) :-
@@ -89,12 +89,12 @@ take_ready(Answer) :-
 
 take_pref(Pref) :-
   write("Input your preference of attributes (Sex, Kids, Loc, Age) in an ordered list.
-        Example #1: [\"Sex\", \"Kids\", \"Loc\", \"Age\"]
-        Example #2: [\"Loc\", \"Age\", \"Sex\", \"Kids\"]"),
+        Example #1: [\"Kids\", \"Loc\", \"Age\"]
+        Example #2: [\"Loc\", \"Age\", \"Kids\"]"),
   nl,
   read(P2),
   (is_list(P2),
-  permutation(P2, ["Sex", "Kids", "Loc", "Age"]) ->
+  permutation(P2, ["Kids", "Loc", "Age"]) ->
     Pref = P2
     ;
     write("Input invalid, try again."),

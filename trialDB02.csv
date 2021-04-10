@@ -1,0 +1,65 @@
+name,age,sex,orientation,bodytype,education,ethnicity,height,location,offspring,wAge,wSex,wKids
+Olivia,23,f,straight,thin,'some college',caucasian,71,Burnaby,no,18-35,m,no
+Emma,31,f,straight,average,'high school',caucasian,65,Vancouver,no,25-45,m,yes
+Ava,29,f,straight,thin,'some college',hispanic,62,Surrey,no,20-40,m,yes
+Sophia,39,f,straight,athletic,college,caucasian,65,Vancouver,no,35-50,m,no
+Isabella,26,f,straight,average,'some college',hispanic,64,Vancouver,no,20-40,m,maybe
+Charlotte,22,f,straight,athletic,'some college',indian,67,Vancouver,no,20-30,m,yes
+Amelia,27,f,straight,average,'some college',caucasian,64,Vancouver,yes,25-40,m,maybe
+Mia,20,f,straight,average,'some college',asian,60,Burnaby,no,18-25,m,no
+Harper,27,f,straight,'a little extra',college,caucasian,63,Surrey,no,25-35,m,yes
+Evelyn,29,f,bisexual,'a little extra',college,caucasian,66,Vancouver,no,25-35,b,maybe
+Abigail,26,f,straight,athletic,college,caucasian,66,Surrey,no,18-35,m,no
+Emily,33,f,gay,athletic,college,caucasian,66,Burnaby,no,25-40,f,no
+Elizabeth,28,f,gay,'a little extra',college,caucasian,67,Vancouver,no,18-35,f,maybe
+Camila,30,f,straight,thin,'some college',black,66,Vancouver,no,25-50,m,maybe
+Luna,31,f,bisexual,average,college,asian,69,Surrey,no,25-45,b,no
+Sofia,25,f,straight,'a little extra',college,indian,62,Surrey,yes,20-35,m,maybe
+Avery,32,f,bisexual,average,'some college',mixed,65,Surrey,no,25-40,b,yes
+Mila,33,f,straight,athletic,college,caucasian,67,Vancouver,yes,25-40,m,maybe
+Aria,31,f,straight,'a little extra',college,indian,61,Richmond,no,25-40,m,maybe
+Scarlett,25,f,bisexual,'a little extra','some college',caucasian,65,Vancouver,no,18-40,b,yes
+Penelope,32,f,gay,average,'high school',asian,64,Vancouver,no,18-40,f,maybe
+Layla,40,f,straight,athletic,college,caucasian,66,Vancouver,yes,35-50,m,maybe
+Chloe,27,f,straight,'a little extra',college,asian,61,Richmond,no,20-50,m,maybe
+Victoria,29,f,straight,'a little extra',college,caucasian,67,Burnaby,yes,25-50,m,no
+Madison,34,f,bisexual,average,college,mixed,67,Burnaby,yes,30-40,b,maybe
+Lisa,32,f,bisexual,average,'some college',mixed,66,Surrey,no,20-40,b,yes
+Liam,22,m,straight,'a little extra','some college',mixed,75,Vancouver,no,18-30,f,yes
+Noah,35,m,straight,average,'high school',caucasian,70,Burnaby,no,20-40,f,yes
+Oliver,38,m,straight,thin,college,caucasian,68,Vancouver,no,30-50,f,maybe
+William,29,m,straight,athletic,college,asian,66,Richmond,no,20-35,f,maybe
+Elijah,23,m,straight,thin,'some college',caucasian,71,Richmond,no,18-25,f,maybe
+James,29,m,straight,athletic,'high school',asian,66,Surrey,yes,20-35,f,no
+Lucas,37,m,straight,athletic,'some college',caucasian,65,Surrey,yes,20-35,f,no
+Mason,35,m,straight,average,'high school',caucasian,70,Vancouver,yes,30-40,f,yes
+Ethan,28,m,straight,average,'high school',caucasian,72,Burnaby,no,25-35,f,no
+Alexander,33,m,straight,athletic,college,asian,70,Richmond,no,18-40,f,yes
+Henry,33,m,straight,athletic,college,caucasian,72,Vancouver,no,18-40,f,yes
+Jacob,30,m,straight,thin,'high school',caucasian,71,Vancouver,yes,18-40,f,maybe
+Michael,33,m,straight,thin,college,caucasian,73,Richmond,no,18-40,f,maybe
+Daniel,28,m,straight,athletic,college,mixed,70,Surrey,no,19-35,f,maybe
+Logan,22,m,straight,athletic,'some college',caucasian,72,Vancouver,no,18-30,f,maybe
+Jackson,22,m,straight,average,'high school',asian,67,Richmond,no,18-30,f,yes
+Sebastian,30,m,straight,athletic,college,indian,74,Surrey,no,20-35,f,yes
+Jack,27,m,gay,thin,college,caucasian,69,Vancouver,no,18-40,m,no
+Aiden,26,m,gay,athletic,college,caucasian,69,Vancouver,no,18-40,m,no
+Owen,32,m,gay,athletic,'high school',caucasian,69,Vancouver,no,18-40,m,yes
+Samuel,25,m,bisexual,athletic,'some college',hispanic,69,Burnaby,no,18-40,b,maybe
+Mathew,35,m,straight,'a little extra',college,caucasian,74,Surrey,yes,18-40,f,yes
+Joseph,30,m,straight,average,college,indian,76,Surrey,yes,20-35,f,no
+Jaxx,34,m,gay,thin,college,caucasian,88,Vancouver,no,18-40,m,no
+Xander,18,m,bisexual,average,college,mixed,66,Burnaby,no,18-40,b,maybe
+Tinga,30,f,bisexual,athletic,'high school',asian,70,Richmond,yes,18-40,b,maybe
+Donald,22,m,straight,average,'some college',caucasian,72,Surrey,no,18-30,f,yes
+Karev,37,m,straight,average,college,caucasian,80,Vancouver,yes,25-40,f,yes
+Doug,55,m,straight,'a little extra','high school',caucasian,70,Surrey,no,18-40,f,yes
+Miguel,55,m,straight,'a little extra','some college',black,80,Vancouver,no,30-60,f,no
+Jorden,46,m,bisexual,average,college,mixed,75,Surrey,no,30-50,b,no
+Juvel,36,m,straight,thin,college,indian,70,Vancouver,no,25-40,f,maybe
+Jen,22,f,straight,average,college,black,66,Vancouver,no,18-40,m,maybe
+Anderson,30,m,gay,average,college,mixed,70,Vancouver,no,18-50,m,maybe
+Donna,33,f,gay,average,college,mixed,65,Surrey,no,18-40,f,maybe
+Robby,28,m,gay,average,'some college',indian,68,Surrey,yes,18-25,m,maybe
+Ted,44,m,gay,'a little extra','high school',black,80,Richmond,no,18-50,m,maybe
+Craig,44,m,gay,thin,'high school',hispanic,75,Vancouver,yes,18-50,m,no
