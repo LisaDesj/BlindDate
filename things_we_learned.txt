@@ -1,1 +1,0 @@
-Using various data strucstures to represent and manipulate our data base.
