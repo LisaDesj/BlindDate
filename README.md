@@ -16,3 +16,5 @@ Location: 'Vancouver', 'Burnaby', 'Richmond', 'Surrey' \
 Offspring: 'yes', 'no', \
 wSex (wants Gender): 'm', 'f', or 'b' (both),\
 wKids (wants future kids): 'yes', 'no', 'maybe', 
+
+Authors: Lisa Desjarlais and Tiger Wu
