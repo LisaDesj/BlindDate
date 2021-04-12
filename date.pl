@@ -23,9 +23,9 @@ start :-
     take_WKids(WKids),
     take_ready(Answer),
     (Answer == "Y" -> 
-        getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids),
+        getMatches(A,Sex,L,K,WAge,WSex,WKids),
         createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids)
-        ; write("Thanks for creating your profile. Restart Blind Date to look for matches!")).
+        ; write("Thanks for trying Blind Date. Restart Blind Date to look for matches!")).
 
 % write profile to csv
 createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
@@ -34,7 +34,7 @@ createProfile(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     csv_write_file('trialDB02.csv',X).
 
 % getMatches takes in a profile and outputs a list of matches
-getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
+getMatches(A,Sex,L,K,WAge,WSex,WKids) :-
     csv_read_file("trialDB02.csv", [_|Data]),
     wSex3(Data,Sex,WSex,V),
     %write(Sex),
@@ -42,7 +42,7 @@ getMatches(N,A,Sex,Ori,BT,Edu,Eth,H,L,K,WAge,WSex,WKids) :-
     take_pref(Pref),
     get_from_wage(WAge, FS, SS),
     % SP_Data : scored by preference data
-    score_by_pref(V, Pref, SP_Data, (FS, SS), Loc, WKids),
+    score_by_pref(V, Pref, SP_Data, (FS, SS), L, WKids),
     % SA_Data : data score again
     score_again(SP_Data, SA_Data, A, K, WKids),
     sort(0, @>=, SA_Data, Sorted_Data),
@@ -92,11 +92,11 @@ wSex3([row(X,A,'m',O,BT,ED,ET,H,L,K,WA,"b",WK)],_,"b",[row(X,A,'m',O,BT,ED,ET,H,
 wSex3([row(X,A,'f',O,BT,ED,ET,H,L,K,WA,'b',WK)],_,"b",[row(X,A,'f',O,BT,ED,ET,H,L,K,WA,'b',WK)]).
 wSex3([row(X,A,'m',O,BT,ED,ET,H,L,K,WA,Sex,WK)],Sex,"b",[row(X,A,'m',O,BT,ED,ET,H,L,K,WA,Sex,WK)]).
 wSex3([row(X,A,'f',O,BT,ED,ET,H,L,K,WA,Sex,WK)],Sex,"b",[row(X,A,'f',O,BT,ED,ET,H,L,K,WA,Sex,WK)]).
-wSex3([row(X,A,AS,O,BT,ED,ET,H,L,K,WA,BS,WK)],Sex,WSex,[]) :- dif(AS,WSex),dif(BS,Sex),dif(Sex,WSex).                             %dif(WSex,b).
-wSex3([row(X,_,'m',_,_,_,_,_,_,_,_,_,_)],"f","f",[]). 
-wSex3([row(X,_,'f',_,_,_,_,_,_,_,_,_,_)],"m","m",[]).
-wSex3([row(X,_,'f',_,_,_,_,_,_,_,_,'m',_)],"f","f",[]).  
-wSex3([row(X,_,'m',_,_,_,_,_,_,_,_,'f',_)],"m","m",[]). 
+wSex3([row(_,_,AS,_,_,_,_,_,_,_,_,BS,_)],Sex,WSex,[]) :- dif(AS,WSex),dif(BS,Sex),dif(Sex,WSex).                             %dif(WSex,b).
+wSex3([row(_,_,'m',_,_,_,_,_,_,_,_,_,_)],"f","f",[]). 
+wSex3([row(_,_,'f',_,_,_,_,_,_,_,_,_,_)],"m","m",[]).
+wSex3([row(_,_,'f',_,_,_,_,_,_,_,_,'m',_)],"f","f",[]).  
+wSex3([row(_,_,'m',_,_,_,_,_,_,_,_,'f',_)],"m","m",[]). 
 wSex3([row(X,A,'f',O,BT,ED,ET,H,L,K,WA,'m',WK)],"m","f",[row(X,A,"m",O,BT,ED,ET,H,L,K,WA,"f",WK)]).
 wSex3([row(X,A,'m',O,BT,ED,ET,H,L,K,WA,'f',WK)],"f","m",[row(X,A,"m",O,BT,ED,ET,H,L,K,WA,"f",WK)]).
 wSex3([row(X,A,'f',O,BT,ED,ET,H,L,K,WA,'f',WK)],"f","f",[row(X,A,"f",O,BT,ED,ET,H,L,K,WA,"f",WK)]).
