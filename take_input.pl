@@ -88,7 +88,7 @@ take_ready(Answer) :-
               "Please choose an valid option").
 
 take_pref(Pref) :-
-  write("Input your preference of attributes (Sex, Kids, Loc, Age) in an ordered list.
+  write("Input your preference of attributes (Kids, Loc, Age) in an ordered list.
         Example #1: [\"Kids\", \"Loc\", \"Age\"]
         Example #2: [\"Loc\", \"Age\", \"Kids\"]"),
   nl,
